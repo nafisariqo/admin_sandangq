@@ -42,5 +42,5 @@
     <!-- End of Logout Modal -->
 
     @include('layouts.javascript')
-</body>
+
 </html>

@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin</title>
+<title>Admin Sandangq</title>
 
 <!-- Custom fonts for this template-->
 <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
