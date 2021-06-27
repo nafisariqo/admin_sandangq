@@ -19,3 +19,29 @@
 {{-- @stack('page-scripts')
 
 @stack('after-script') --}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('deleteKonten').click(function(){
+        var id = $(this).attr('rel');
+        var deleteFunction = $(this).attr('rel1');
+        swal({
+          title: "Are you sure?",
+          text: "Your will not be able to recover this imaginary file!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: "btn-danger",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        },
+        function(){
+          window.location.href="/delete/"+deletefunction+"/"+id;
+          swal("Deleted!", "Your imaginary file has been deleted.", "success");
+        });
+
+      });
+    });
+
+  </script>

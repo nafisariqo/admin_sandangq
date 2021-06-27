@@ -337,16 +337,16 @@
                         <td>{{$data->description}}</td>
                         <td>
                           <a href="{{route('k.e', $data->id)}}" class="btn btn-warning mb-3">Edit Data</a>
-                          {{-- <a rel="{{ $data->id }}" rel1="konten" href="javascript:" class="btn btn-danger mb-3" id="deleteKonten" >Delete Data</a> --}}
+                          <a rel="{{ $data->id }}" rel1="konten" href="javascript()" class="btn btn-danger mb-3" id="deleteKonten" >Delete Data</a>
                           {{-- <a action="{{ url('konten/'.$data->id) }}" method="post" class="btn btn-danger mb-3" onsubmit="return confirm('Yakin Hapus Data?')" >Delete Data</a> --}}
 
-                          <form action="{{ url('konten/'.$data->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure to delete this data?')"> 
+                          {{-- <form action="{{ url('konten/'.$data->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure to delete this data?')"> 
                             @method('delete')
                             @csrf
                             <button class="btn btn-danger mb-3">
                               <i class="fa fa-trash"></i>
                             </button>
-                          </form>
+                          </form> --}}
                         </td>
                       </tr>
                   @endforeach
