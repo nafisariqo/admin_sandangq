@@ -48,5 +48,6 @@ Route::get('/create_konten', function () {
 Route::get('konten', 'KontenController@index')->name('konten');
 Route::post('konten/save', 'KontenController@save')->name('k.s');
 // Route::get('/delete/konten/{id}', 'KontenController@delete');
-Route::delete('konten/{id}', 'KontenController@delete');
+Route::delete('konten/{id}', 'KontenController@delete')->name('k.d');
 Route::get('konten/{id}/edit', 'KontenController@edit')->name('k.e');
+Route::patch('konten/{id}', 'KontenController@update')->name('k.u');

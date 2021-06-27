@@ -51,6 +51,14 @@ class KontenController extends Controller
     
     public function edit($id){
         $konten = DB::table('konten')->where('id', $id)->first();
-        return view('edit_konten', ['konten' => 'konten']);
+        return view('dashboard.edit_konten', ['konten' => $konten]);
+    }
+
+    public function update(Request $request, $id){
+        DB::table('konten')->where('id', $id)->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
+        return redirect('konten')->with('status', 'Update success');
     }
 }
