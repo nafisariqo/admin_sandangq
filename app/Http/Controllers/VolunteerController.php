@@ -42,7 +42,7 @@ class VolunteerController extends Controller
 
             $path = $request->file('gambar')->storeAs('img', $imageName, 'public');
   
-            $imagePath->move(base_path('\img'), $imageName);
+            $imagePath->move(base_path('\public\img'), $imageName);
             DB::insert('insert into volunteer (gambar, nama) values (?, ?)', [$path, $request->nama]);
             return redirect()->route('volunteer'); 
           }

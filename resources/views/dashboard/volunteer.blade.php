@@ -325,6 +325,7 @@
                       <th>No</th>
                       <th>Gambar</th>
                       <th>Nama</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   @foreach ($volunteer as $no => $data)
@@ -351,6 +352,7 @@
                       <th>No</th>
                       <th>Gambar</th>
                       <th>Nama</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
                 </table>
