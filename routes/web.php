@@ -45,9 +45,21 @@ Route::get('/create_konten', function () {
     return view('dashboard.create_konten');
 });
 
+Route::get('/create_volunteer', function () {
+    return view('dashboard.create_volunteer');
+});
+
+//konten
 Route::get('konten', 'KontenController@index')->name('konten');
 Route::post('konten/save', 'KontenController@save')->name('k.s');
 // Route::get('/delete/konten/{id}', 'KontenController@delete');
 Route::delete('konten/{id}', 'KontenController@delete')->name('k.d');
 Route::get('konten/{id}/edit', 'KontenController@edit')->name('k.e');
 Route::patch('konten/{id}', 'KontenController@update')->name('k.u');
+
+//volunteer
+Route::get('volunteer', 'VolunteerController@index')->name('volunteer');
+Route::post('volunteer/save', 'VolunteerController@save')->name('v.s');
+Route::delete('volunteer/{id}', 'VolunteerController@delete')->name('v.d');
+Route::get('volunteer/{id}/edit', 'VolunteerController@edit')->name('v.e');
+Route::patch('volunteer/{id}', 'VolunteerController@update')->name('v.u');
