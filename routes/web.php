@@ -63,3 +63,12 @@ Route::post('volunteer/save', 'VolunteerController@save')->name('v.s');
 Route::delete('volunteer/{id}', 'VolunteerController@delete')->name('v.d');
 Route::get('volunteer/{id}/edit', 'VolunteerController@edit')->name('v.e');
 Route::patch('volunteer/{id}', 'VolunteerController@update')->name('v.u');
+
+//user
+Route::get('userpage', function () {
+    return view('home');
+});
+
+Route::get('read', function () {
+    return view('readmore');
+});
