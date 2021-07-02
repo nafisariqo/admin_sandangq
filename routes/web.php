@@ -64,11 +64,11 @@ Route::delete('volunteer/{id}', 'VolunteerController@delete')->name('v.d');
 Route::get('volunteer/{id}/edit', 'VolunteerController@edit')->name('v.e');
 Route::patch('volunteer/{id}', 'VolunteerController@update')->name('v.u');
 
-//user
-Route::get('userpage', function () {
-    return view('home');
+//user page
+Route::get('home', function () {
+    return view('user/home');
 });
 
 Route::get('read', function () {
-    return view('readmore');
+    return view('user/readmore');
 });

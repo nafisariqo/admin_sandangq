@@ -36,17 +36,17 @@
                 <div class="header-wrap">
                     <div class="header-top d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="#home" ><img src="img/logo.png" alt="" style="width:120px;height:50px align=left;"></a>
+                            <a href="#home"><img src="img/logo.png" alt=""></a>
                         </div>
-                        <div class="main-menubar d-flex align-items-center">
+                        {{-- <div class="main-menubar d-flex align-items-center">
                             <nav class="hide">
-                                <a href="#home">Home</a>
-                                <a href="#project">Projects</a>
-                                <a href="#about">About</a>
-                                <a href="#donate">Donate</a>
+                                <a href="index.html">Home</a>
+                                <a href="index.html">Projects</a>
+                                <a href="index.html">About</a>
+                                <a href="index.html">Donate</a>
                             </nav>
                             <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
         <!-- End Header Area -->
 
         <!-- start banner Area -->
-        <section class="banner-area relative" id="home">
+        <!-- <section class="banner-area relative" id="home">
             <div class="overlay overlay-bg"></div>
             <div class="container">
                     <div class="row fullscreen align-items-center justify-content-start" style="height: 915px;">
@@ -67,18 +67,18 @@
                         </div>
                     </div>
             </div>
-        </section>
+        </section> -->
         <!-- End banner Area -->
 
         <!-- Start callto Area -->
-            <section class="callto-area relative">
+            <!-- <section class="callto-area relative">
                 <div class="container">
                     <div class="row d-flex callto-wrap justify-content-between pt-40 pb-40">
                         <h3 class="text-white">Please Help them and Donate now</h3>
                         <a href="#" class="head-btn head-btn2 btn text-uppercase">Donate Now</a>
                     </div>
                 </div>
-            </section>
+            </section> -->
         <!-- End callto Area -->
 
 
@@ -89,7 +89,8 @@
                     <div class="col-md-8 pb-80 header-text">
                         <h1>Waiting for Help</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
+                            this Sandang Project until October 30th<br><br>
+                            HISTORY:
                         </p>
                     </div>
                 </div>
@@ -98,18 +99,18 @@
                         <div class="single-project">
                             <div class="content">
                                 <a href="#" target="_blank">
-                                  <div class="content-overlay"></div>
+                                  <!-- <div class="content-overlay"></div> -->
                                        <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
+                                      <!-- <div class="content-details fadeIn-bottom">
                                           <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
-                                      </div>
+                                      </div> -->
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Pray For NTT</h2></a>
-                              <p>Banjir dikawasan NTT mengakibatkan banyak kerusakan</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Dari: Anonim</h2></a>
+                              <p>Status: Ekspedisi sedang menyortir</p>
+                              <!-- <a class="text-uppercase" href="#">read more</a> -->
                         </div>
 
                     </div>
@@ -117,36 +118,36 @@
                         <div class="single-project">
                             <div class="content">
                                 <a href="#" target="_blank">
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/p2.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
+                                  <!-- <div class="content-overlay"></div> -->
+                                       <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
+                                      <!-- <div class="content-details fadeIn-bottom">
                                           <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
-                                      </div>
+                                      </div>-->
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Easy Flight Search</h2></a>
-                              <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Dari: Jilan</h2></a>
+                              <p>Status: Paket sampai di Cibinong</p>
+                              <!-- <a class="text-uppercase" href="#">read more</a> -->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 project-wrap">
                         <div class="single-project">
                             <div class="content">
                                 <a href="#" target="_blank">
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/p3.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
+                                  <!-- <div class="content-overlay"></div> -->
+                                       <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
+                                      <!-- <div class="content-details fadeIn-bottom">
                                           <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
-                                      </div>
+                                      </div> -->
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Easy Flight Search</h2></a>
-                              <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Dari: Diffa</h2></a>
+                              <p>Status: Paket sampai di Depok</p>
+                              <!-- <a class="text-uppercase" href="#">read more</a> -->
                         </div>
                     </div>
 
@@ -160,15 +161,18 @@
             <div class="container-fluid">
                 <div class="row d-flex justify-content-end align-items-center">
                     <div class="col-lg-6 col-md-12 about-left no-padding">
-                        <img class="img-fluid" src="img/about-img.jpg" alt="">
+                        <img class="img-fluid" src="img/1.jpg" alt="">
                     </div>
                     <div class="col-lg-6 col-md-12 about-right">
-                        <h1>A very Lovely Welcome <br>
-                        to our Company</h1>
+                        <h1>Banjir NTT</h1>
                         <p>
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.
+                            Banjir di NTT mengakibatkan kerusakan <br>
+                            175 Meninggal <br>
+                            162 luka-luka <br>
+                            16016 Mengungsi <br>
+
                         </p>
-                        {{-- <button class="primary-btn mt-20 text-uppercase ">learn more<span class="lnr lnr-arrow-right"></span></button> --}}
+                        <!-- <button href="" class="primary-btn mt-20 text-uppercase ">Donate Now<span class="lnr lnr-arrow-right"></span></button> -->
                     </div>
                 </div>
             </div>
@@ -176,7 +180,7 @@
         <!-- End about Area -->
 
         <!-- Start volunteer Area -->
-        <section class="volunteer-area section-gap">
+        <!-- <section class="volunteer-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 pb-80 header-text">
@@ -254,9 +258,9 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End volunteer Area -->
-
+<br>
 
         <!-- Start donate Area -->
         <section class="donate-area relative section-gap" id="donate">
@@ -264,16 +268,16 @@
             <div class="container">
                 <div class="row d-flex justify-content-end">
                     <div class="col-lg-6 col-sm-12 pb-80 header-text">
-                        <h1>Donate Your Sandang Now!</h1>
+                        <h1>Donate Now</h1>
                         <p>
-                           PENDONASI DIHARAP MEMBACA SYARAT DAN KETENTUAN SEBELUM BERDONASI!
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore  et dolore magna aliqua.
                         </p>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 contact-left">
                         <div class="single-info">
-                            <h4>Syarat dan Ketentuan</h4>
+                            <h4>Syarat</h4>
                             <p>
                                 1. Masih sangat layak untuk dipakai atau digunakan (pakaian, selimut, dan lain-lain) <br>
                                 2. Tidak robek/berlubang/bernoda<br>
@@ -292,6 +296,7 @@
                                 4. Pendonasi mengisi form donasi pada website SandangQ<br>
                                 5. Histori donasi akan diupdate melalui website SandangQ<br>
                                 6. Jika ada pertanyaan, pendonasi bisa menghubungi email kami
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6 contact-right">
@@ -313,7 +318,7 @@
                                     </div>
                                     <div class="col-lg-12 d-flex flex-column">
                                         <textarea class="form-control mt-20" name="message" placeholder="Alamat" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                        <input name="amound" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No. Resi'" class="form-control mt-20" required="" type="text">
+                                        <input name="amound" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Donation amount (USD)'" class="form-control mt-20" required="" type="text">
                                     </div>
                                     <div class="col-lg-12 d-flex flex-column">
                                         <select name="type" class="app-select form-control" required>
@@ -345,10 +350,10 @@
             <div class="container">
                 <div class="row d-flex flex-column justify-content-center">
                     <ul class="footer-menu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#project">Projects</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="{{ url('/') }}">Return to Home</a></li>
+                        <!-- <li><a href="index.html">Projects</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="#donate">Donate</a></li> -->
                     </ul>
                     <div class="footer-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
