@@ -9,6 +9,18 @@
             @csrf
             @method('patch')
             <div class="row mb-3">
+              <label for="gmbr" class="col-sm-2 col-form-label">Gambar</label>
+              <div class="col-sm-10">
+                <input type="file" class="form-control" id="gmbr" name="gmbr" 
+                @if (old('gmbr'))
+                    value="{{ old('gmbr') }}"        
+                @else
+                    value="{{ $konten->gmbr }}"
+                @endif
+                >
+              </div>
+            </div>
+            <div class="row mb-3">
               <label for="title" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="title" name="title" 

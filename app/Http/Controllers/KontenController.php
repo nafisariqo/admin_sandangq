@@ -30,8 +30,20 @@ class KontenController extends Controller
 
     public function save(Request $request)
     {
-      DB::insert('insert into konten (title, description) values (?, ?)', [$request->title, $request->description]);
-      return redirect()->route('konten'); 
+        $request->validate([
+            'gmbr' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+         ]);
+  
+          if ($request->file('gmbr')) {
+            $imagePath = $request->file('gmbr');
+            $imageName = $imagePath->getClientOriginalName();
+
+            $path = $request->file('gmbr')->storeAs('img', $imageName, 'public');
+  
+            $imagePath->move(base_path('\public\img'), $imageName);
+            DB::insert('insert into konten (gmbr, title, description) values (?, ?, ?)', [$path, $request->title, $request->description]);
+            return redirect()->route('konten'); 
+          }
     }
 
     /**

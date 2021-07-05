@@ -23,6 +23,7 @@
           <thead>
             <tr>
               <th>No</th>
+              <th>Gambar</th>
               <th>Title</th>
               <th>Description</th>
               <th>Action</th>
@@ -31,6 +32,9 @@
           @foreach ($konten as $no => $data)
               <tr>
                 <td>{{$no+1}}</td>
+                <td>
+                  <a href="{{ asset($data->gmbr) }}" target="_blank" rel="noopener noreferrer">Lihat Gambar</a>
+                </td>
                 <td>{{$data->title}}</td>
                 <td>{{$data->description}}</td>
                 <td>
@@ -48,6 +52,7 @@
           <tfoot>
             <tr>
               <th>No</th>
+              <th>Gambar</th>
               <th>Title</th>
               <th>Description</th>
               <th>Action</th>

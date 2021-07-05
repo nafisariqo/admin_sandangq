@@ -8,7 +8,7 @@
           <form action="{{route('v.s')}}" method="post" enctype="multipart/form-data">
            {{ csrf_field() }}
             <div class="row mb-3">
-              <label for="title" class="col-sm-4 col-form-label">Upload Gambar</label>
+              <label for="gambar" class="col-sm-4 col-form-label">Upload Gambar</label>
               <div class="col-sm-10">
                 <input type="file" id="gambar" name="gambar">
               </div>
