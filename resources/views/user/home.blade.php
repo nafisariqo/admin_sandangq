@@ -20,13 +20,14 @@
         <!--
         CSS
         ============================================= -->
-        <link rel="stylesheet" href="{{ url('css/linearicons.css') }}">=
+        <link rel="stylesheet" href="{{ url('css/linearicons.css') }}">
         <link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ url('css/magnific-popup.css') }}">
         <link rel="stylesheet" href="{{ url('css/nice-select.css') }}">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="{{ url('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url('css/main.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.18/sweetalert2.min.css">
     </head>
     <body>
 
@@ -74,8 +75,8 @@
             <section class="callto-area relative">
                 <div class="container">
                     <div class="row d-flex callto-wrap justify-content-between pt-40 pb-40">
-                        <h3 class="text-white">Please Help them and Donate now</h3>
-                        <a href="#" class="head-btn head-btn2 btn text-uppercase">Donate Now</a>
+                        <h3 class="text-white">Tracking Your Donation!</h3>
+                        <a href="#" class="head-btn head-btn2 btn text-uppercase">Tracking Now</a>
                     </div>
                 </div>
             </section>
@@ -89,7 +90,7 @@
                     <div class="col-md-8 pb-80 header-text">
                         <h1>Waiting for Help</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
+                           Project dibawah ini memiliki batas waktu, ayo donasikan sandangmu!
                         </p>
                     </div>
                 </div>
@@ -99,17 +100,17 @@
                             <div class="content">
                                 <a href="#" target="_blank">
                                   <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
+                                       <img class="content-image img-fluid d-block mx-auto" src="img/1.png" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
+                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
                                       </div>
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Pray For NTT</h2></a>
-                              <p>Banjir dikawasan NTT mengakibatkan banyak kerusakan</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Gempa Bumi Majene</h2></a>
+                              <p>Bencana tersebut merenggut harta dan keluarga</p>
+                            
                         </div>
 
                     </div>
@@ -118,17 +119,17 @@
                             <div class="content">
                                 <a href="#" target="_blank">
                                   <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/p2.jpg" alt="">
+                                       <img class="content-image img-fluid d-block mx-auto" src="img/2.png" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
+                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
                                       </div>
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Easy Flight Search</h2></a>
-                              <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Banjir Kalimantan selatan</h2></a>
+                              <p>Banjir tersebut merenggut harta dan keluarga</p>
+                        
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 project-wrap">
@@ -136,17 +137,16 @@
                             <div class="content">
                                 <a href="#" target="_blank">
                                   <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/p3.jpg" alt="">
+                                       <img class="content-image img-fluid d-block mx-auto" src="img/3.png" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <a href="#" class="head-btn btn text-uppercase">Donate Now</a>
+                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
                                       </div>
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Easy Flight Search</h2></a>
-                              <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
-                              <a class="text-uppercase" href="{{ url('user/read') }}">read more</a>
+                            <a href="#"><h2>Angin Puting Beliung Demak</h2></a>
+                              <p>Bencana tersebut merenggut harta dan keluarga</p>
                         </div>
                     </div>
 
@@ -163,10 +163,9 @@
                         <img class="img-fluid" src="img/about-img.jpg" alt="">
                     </div>
                     <div class="col-lg-6 col-md-12 about-right">
-                        <h1>A very Lovely Welcome <br>
-                        to our Company</h1>
+                        <h1>Sandang Q</h1>
                         <p>
-                            inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.
+                            merupakan sebuat website donasi yang bertujuan untuk membantu mengurangi limbah textil di dunia.
                         </p>
                         {{-- <button class="primary-btn mt-20 text-uppercase ">learn more<span class="lnr lnr-arrow-right"></span></button> --}}
                     </div>
@@ -181,22 +180,22 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 pb-80 header-text">
                         <h1>Our Volunteers</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
-                        </p>
+                        {{-- <p>
+                            <br> labore  et dolore magna aliqua.
+                        </p> --}}
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
-                                <a href="#" target="_blank">
+                                {{-- <a href="#" target="_blank"> --}}
                                   <div class="content-overlay"></div>
                                        <img class="content-image img-fluid d-block mx-auto" src="img/v1.jpg" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <h4>Andy Florence</h4>
+                                          <h4>Jungkook</h4>
                                           <p>
-                                              inappropriate behavior
+                                              CEO
                                           </p>
                                       </div>
                                 </a>
@@ -206,13 +205,13 @@
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
-                                <a href="#" target="_blank">
+                                {{-- <a href="#" target="_blank"> --}}
                                   <div class="content-overlay"></div>
                                        <img class="content-image img-fluid d-block mx-auto" src="img/v2.jpg" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <h4>Andy Florence</h4>
+                                          <h4>Seokjin</h4>
                                           <p>
-                                              inappropriate behavior
+                                              CCO
                                           </p>
                                       </div>
                                 </a>
@@ -222,13 +221,13 @@
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
-                                <a href="#" target="_blank">
+                                {{-- <a href="#" target="_blank"> --}}
                                   <div class="content-overlay"></div>
                                        <img class="content-image img-fluid d-block mx-auto" src="img/v3.jpg" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <h4>Andy Florence</h4>
+                                          <h4>RM</h4>
                                           <p>
-                                              inappropriate behavior
+                                              Donatur
                                           </p>
                                       </div>
                                 </a>
@@ -238,13 +237,13 @@
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
-                                <a href="#" target="_blank">
+                                {{-- <a href="#" target="_blank"> --}}
                                   <div class="content-overlay"></div>
                                        <img class="content-image img-fluid d-block mx-auto" src="img/v4.jpg" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <h4>Andy Florence</h4>
+                                          <h4>Jimin</h4>
                                           <p>
-                                              inappropriate behavior
+                                              Donatur
                                           </p>
                                       </div>
                                 </a>
@@ -295,41 +294,36 @@
                         </div>
                     </div>
                     <div class="col-lg-6 contact-right">
-                        <form class="booking-form" id="myForm" action="donate.php">
-                                 <div class="row">
-                                     <div class="col-lg-12 d-flex flex-column">
-                                         <select name="type" class="app-select form-control" required>
-                                            <option data-display="Project you want to donate">Project you want to donate</option>
-                                            <option value="1">Banjir NTT</option>
-                                            <option value="2">Donate type 2</option>
-                                            <option value="3">Donate type 3</option>
-                                        </select>
-                                     </div>
-                                     <div class="col-lg-6 d-flex flex-column">
-                                        <input name="fname" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="form-control mt-20" required="" type="text" required>
-                                    </div>
-                                    <div class="col-lg-6 d-flex flex-column">
-                                        <input name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="form-control mt-20" required="" type="email">
-                                    </div>
+                        <form action="{{route('d.s')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
+                            {{ csrf_field() }}
+                                <div class="row">
                                     <div class="col-lg-12 d-flex flex-column">
-                                        <textarea class="form-control mt-20" name="message" placeholder="Alamat" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                        <input name="amound" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No. Resi'" class="form-control mt-20" required="" type="text">
-                                    </div>
-                                    <div class="col-lg-12 d-flex flex-column">
-                                        <select name="type" class="app-select form-control" required>
-                                           <option data-display="--Pilih Ekspedisi--">--Pilih Ekspedisi--</option>
-                                           <option value="1">JNE</option>
-                                           <option value="2">J&T</option>
-                                           <option value="3">Sicepat</option>
+                                        <select name="news" id="news" class="app-select form-control" required>
+                                           <option data-display="Project you want to donate">Project you want to donate</option>
+                                           <option value="Banjir NTT">Banjir NTT</option>
+                                           <option value="Panti Asuhan A">Panti Asuhan A</option>
+                                           <option value="Panti Asuhan B">Panti Asuhan B</option>
                                        </select>
                                     </div>
-                                    <div class="col-lg-12 d-flex justify-content-end send-btn">
-                                        <button class="submit-btn primary-btn mt-20 text-uppercase ">donate<span class="lnr lnr-arrow-right"></span></button>
-                                    </div>
-
-                                    <div class="alert-msg"></div>
-                                </div>
-                          </form>
+                                    <div class="col-lg-6 d-flex flex-column">
+                                       <input name="name" id="name" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="form-control mt-20" required="" type="text" required>
+                                   </div>
+                                   <div class="col-lg-6 d-flex flex-column">
+                                       <input name="phone" id="phone" placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone Number'" class="form-control mt-20" required="" type="number">
+                                   </div>
+                                   <div class="col-lg-12 d-flex flex-column">
+                                       <textarea class="form-control mt-20" name="address" id="address" placeholder="Alamat" required=""></textarea>
+                                       <input name="resi" id="resi" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No. Resi'" class="form-control mt-20" required="" type="text">
+                                   </div>
+                                                                     
+                                   <div class="col-lg-12 d-flex justify-content-end send-btn">
+                                        {{-- <a href="" type="sibmit" class="head-btn head-btn2 btn text-uppercase">DONATE</a> --}}
+                                       <button type="submit" id="btnsave" onclick="alert('data berhasil tersimpan!')" class="submit-btn primary-btn mt-20 text-uppercase">DONATE<span class="lnr lnr-arrow-right"></span></button>
+                                   </div>
+                        
+                                   <div class="alert-msg"></div>
+                               </div>
+                         </form>
                           <!-- <p class="payment-method">
                               We Accept :   <img src="img/payment.png" alt="">
                           </p> -->
@@ -366,6 +360,13 @@
         </footer>
         <!-- End footer Area -->
 
+        {{-- <script>
+            $('#btnsave').on('click',function() {
+                console.log("btn click")
+            })
+        </script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.18/sweetalert2.min.js "></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="{{ url('js/vendor/jquery-2.2.4.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="{{ url('js/vendor/bootstrap.min.js') }}"></script>

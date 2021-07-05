@@ -36,7 +36,7 @@
                 <div class="header-wrap">
                     <div class="header-top d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="#home"><img src="img/logo.png" alt=""></a>
+                            <a href="{{ url('home') }}"><img src="img/logo.png" alt=""></a>
                         </div>
                         {{-- <div class="main-menubar d-flex align-items-center">
                             <nav class="hide">
@@ -82,7 +82,7 @@
         <!-- End callto Area -->
 
 
-        <!-- Start project Area -->
+        {{-- <!-- Start project Area -->
         <section class="project-area section-gap" id="project">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -154,9 +154,9 @@
                 </div>
             </div>
         </section>
-        <!-- End project Area -->
+        <!-- End project Area --> --}}
 
-        <!-- Start about Area -->
+        <!-- Start Konten Area -->
         <section class="about-area" id="about">
             <div class="container-fluid">
                 <div class="row d-flex justify-content-end align-items-center">
@@ -262,22 +262,22 @@
         <!-- End volunteer Area -->
 <br>
 
-        <!-- Start donate Area -->
-        <section class="donate-area relative section-gap" id="donate">
+          <!-- Start donate Area -->
+          <section class="donate-area relative section-gap" id="donate">
             <div class="overlay overlay-bg"></div>
             <div class="container">
                 <div class="row d-flex justify-content-end">
                     <div class="col-lg-6 col-sm-12 pb-80 header-text">
-                        <h1>Donate Now</h1>
+                        <h1>Donate Your Sandang Now!</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br> tempor incididunt ut labore  et dolore magna aliqua.
+                           PENDONASI DIHARAP MEMBACA SYARAT DAN KETENTUAN SEBELUM BERDONASI!
                         </p>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 contact-left">
                         <div class="single-info">
-                            <h4>Syarat</h4>
+                            <h4>Syarat dan Ketentuan</h4>
                             <p>
                                 1. Masih sangat layak untuk dipakai atau digunakan (pakaian, selimut, dan lain-lain) <br>
                                 2. Tidak robek/berlubang/bernoda<br>
@@ -296,45 +296,39 @@
                                 4. Pendonasi mengisi form donasi pada website SandangQ<br>
                                 5. Histori donasi akan diupdate melalui website SandangQ<br>
                                 6. Jika ada pertanyaan, pendonasi bisa menghubungi email kami
-                            </p>
                         </div>
                     </div>
                     <div class="col-lg-6 contact-right">
-                        <form class="booking-form" id="myForm" action="donate.php">
-                                 <div class="row">
-                                     <div class="col-lg-12 d-flex flex-column">
-                                         <select name="type" class="app-select form-control" required>
-                                            <option data-display="Project you want to donate">Project you want to donate</option>
-                                            <option value="1">Banjir NTT</option>
-                                            <option value="2">Donate type 2</option>
-                                            <option value="3">Donate type 3</option>
-                                        </select>
-                                     </div>
-                                     <div class="col-lg-6 d-flex flex-column">
-                                        <input name="fname" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="form-control mt-20" required="" type="text" required>
-                                    </div>
-                                    <div class="col-lg-6 d-flex flex-column">
-                                        <input name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="form-control mt-20" required="" type="email">
-                                    </div>
+                        <form action="{{route('d.s')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
+                            {{ csrf_field() }}
+                                <div class="row">
                                     <div class="col-lg-12 d-flex flex-column">
-                                        <textarea class="form-control mt-20" name="message" placeholder="Alamat" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                                        <input name="amound" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Donation amount (USD)'" class="form-control mt-20" required="" type="text">
-                                    </div>
-                                    <div class="col-lg-12 d-flex flex-column">
-                                        <select name="type" class="app-select form-control" required>
-                                           <option data-display="--Pilih Ekspedisi--">--Pilih Ekspedisi--</option>
-                                           <option value="1">JNE</option>
-                                           <option value="2">J&T</option>
-                                           <option value="3">Sicepat</option>
+                                        <select name="news" id="news" class="app-select form-control" required>
+                                           <option data-display="Project you want to donate">Project you want to donate</option>
+                                           <option value="Banjir NTT">Banjir NTT</option>
+                                           <option value="Panti Asuhan A">Panti Asuhan A</option>
+                                           <option value="Panti Asuhan B">Panti Asuhan B</option>
                                        </select>
                                     </div>
-                                    <div class="col-lg-12 d-flex justify-content-end send-btn">
-                                        <button class="submit-btn primary-btn mt-20 text-uppercase ">donate<span class="lnr lnr-arrow-right"></span></button>
-                                    </div>
-
-                                    <div class="alert-msg"></div>
-                                </div>
-                          </form>
+                                    <div class="col-lg-6 d-flex flex-column">
+                                       <input name="name" id="name" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" class="form-control mt-20" required="" type="text" required>
+                                   </div>
+                                   <div class="col-lg-6 d-flex flex-column">
+                                       <input name="phone" id="phone" placeholder="Nomor telepon" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone Number'" class="form-control mt-20" required="" type="number" required>
+                                   </div>
+                                   <div class="col-lg-12 d-flex flex-column">
+                                       <textarea class="form-control mt-20" name="address" id="address" placeholder="Alamat" required=""></textarea>
+                                       <input name="resi" id="resi" placeholder="No. Resi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No. Resi'" class="form-control mt-20" required="" type="text" required>
+                                   </div>
+                                                                     
+                                   <div class="col-lg-12 d-flex justify-content-end send-btn">
+                                        {{-- <a href="" type="sibmit" class="head-btn head-btn2 btn text-uppercase">DONATE</a> --}}
+                                       <button type="submit" id="btnsave" onclick="alert('data berhasil tersimpan!')" class="submit-btn primary-btn mt-20 text-uppercase">DONATE<span class="lnr lnr-arrow-right"></span></button>
+                                   </div>
+                        
+                                   <div class="alert-msg"></div>
+                               </div>
+                         </form>
                           <!-- <p class="payment-method">
                               We Accept :   <img src="img/payment.png" alt="">
                           </p> -->
