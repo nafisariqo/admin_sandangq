@@ -38,9 +38,9 @@
                 <td>{{$data->title}}</td>
                 <td>{{$data->description}}</td>
                 <td>
-                  <a href="{{route('k.e', $data->id)}}" class="btn btn-warning mb-3">Edit Data</a>
-                  <a href="#" data-id="{{ $data->id }}" class="btn btn-danger mb-3 swal-confirm">
-                    <form action="{{ route('k.d', $data->id) }}" id="delete{{ $data->id }}" method="POST">
+                  <a href="{{route('k.e', $data->id_konten)}}" class="btn btn-warning mb-3">Edit Data</a>
+                  <a href="#" data-id="{{ $data->id_konten }}" class="btn btn-danger mb-3 swal-confirm">
+                    <form action="{{ route('k.d', $data->id_konten) }}" id="delete{{ $data->id_konten }}" method="POST">
                       @csrf
                       @method('delete')
                     </form>

@@ -19,7 +19,7 @@ class CreateDonasiTable extends Migration
             $table->string('phone', 15);
             $table->string('address', 200);
             $table->string('news', 100);
-            $table->string('image', 255);
+            $table->string('resi', 20);
             $table->timestamps();
         });
     }
