@@ -8,6 +8,12 @@
           <form action="{{route('k.s')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row mb-3">
+              <label for="gmbr" class="col-sm-4 col-form-label">Upload Gambar</label>
+              <div class="col-sm-10">
+                <input type="file" id="gmbr" name="gmbr">
+              </div>
+            </div>
+            <div class="row mb-3">
               <label for="title" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="title" name="title">

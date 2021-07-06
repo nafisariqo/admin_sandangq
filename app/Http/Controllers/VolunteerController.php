@@ -46,15 +46,6 @@ class VolunteerController extends Controller
             DB::insert('insert into volunteer (gambar, nama) values (?, ?)', [$path, $request->nama]);
             return redirect()->route('volunteer'); 
           }
-
-        // $request->validate([
-        //     'gambar'=> 'mimes:jpeg,png,jpg,gif,svg|max:3024',
-        //     'nama' => 'required|max:50|min:2'
-        // ]);
-
-        // $imgName = $request->gambar->getClientOriginalName() . '-' . time()
-        //                                 . '.' . $request->gambar->extension();
-
         
     }
 
@@ -77,10 +68,12 @@ class VolunteerController extends Controller
     
     public function edit($id){
         $volunteer = DB::table('volunteer')->where('id', $id)->first();
-        return view('dashboard.edit_volunteer', ['volunteer' => $volunteer]);
+        // return view('dashboard.edit_volunteer', ['volunteer' => $volunteer]);
+        return view('dashboard.edit_volunteer', compact('volunteer'));
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id){  
+
         DB::table('volunteer')->where('id', $id)->update([
             'gambar' => $request->gambar,
             'nama' => $request->nama

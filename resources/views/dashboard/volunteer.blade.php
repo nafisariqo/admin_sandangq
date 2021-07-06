@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-md-12">
-        <a href="/create_konten" class="btn btn-primary mb-3">Add Data</a>
+        <a href="/create_volunteer" class="btn btn-primary mb-3">Add Data</a>
     </div>
   </div>
 </div>
@@ -63,3 +63,32 @@
 
 
 @endsection
+
+@push('page-scripts')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+@endpush
+
+@push('after-script')
+<script>
+  $(".swal-confirm").click(function(e) {
+    id = e.target.dataset.id;
+    swal({
+      title: "Are you sure? " + id,
+      text: "Your will not be able to recover this imaginary file!",
+      type: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if(willDelete) {
+        swal('Your imaginary file has been deleted!', {
+          icon: 'success',
+        });
+        $(`#delete${id}`).submit();
+      } else {
+        swal('Your imaginary file is safe!');
+      }
+    })
+  })
+</script>
+@endpush
