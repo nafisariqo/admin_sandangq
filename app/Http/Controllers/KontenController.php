@@ -45,17 +45,17 @@ class KontenController extends Controller
        
         // $Konten::where(['id'=> $id])->delete();
         // return redirect()->back()->with('flash_message_success', 'Delete success');
-        DB::table('konten')->where('id', $id)->delete();
+        DB::table('konten')->where('id_konten', $id)->delete();
         return redirect('konten')->with('status', 'Delete success');
     }
     
     public function edit($id){
-        $konten = DB::table('konten')->where('id', $id)->first();
+        $konten = DB::table('konten')->where('id_konten', $id)->first();
         return view('dashboard.edit_konten', ['konten' => $konten]);
     }
 
     public function update(Request $request, $id){
-        DB::table('konten')->where('id', $id)->update([
+        DB::table('konten')->where('id_konten', $id)->update([
             'title' => $request->title,
             'description' => $request->description
         ]);
