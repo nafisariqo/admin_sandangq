@@ -71,9 +71,9 @@
 @push('after-script')
 <script>
   $(".swal-confirm").click(function(e) {
-    id = e.target.dataset.id;
+    id_konten = e.target.dataset.id_konten;
     swal({
-      title: "Are you sure? " + id,
+      title: "Are you sure? " + id_konten,
       text: "Your will not be able to recover this imaginary file!",
       type: "warning",
       buttons: true,
@@ -84,7 +84,7 @@
         swal('Your imaginary file has been deleted!', {
           icon: 'success',
         });
-        $(`#delete${id}`).submit();
+        $(`#delete${id_konten}`).submit();
       } else {
         swal('Your imaginary file is safe!');
       }

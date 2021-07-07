@@ -11,4 +11,10 @@ class Konten extends Model
     protected $fillable = [
         'id_konten', 'gmbr', 'title', 'description'
     ];
+
+    public function donasi()
+    {
+        return $this->hasMany(Donasi::class);
+    }
+
 }

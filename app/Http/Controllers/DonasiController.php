@@ -14,6 +14,7 @@ class DonasiController extends Controller
      */
     public function index()
     {
+        // $dtDonasi = Donasi::with('konten')->paginate(10);
         $donasi = DB::table('donasi')->get();
         return view('dashboard.donasi', ['donasi' => $donasi ]);
     }
