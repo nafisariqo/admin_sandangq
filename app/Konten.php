@@ -12,9 +12,9 @@ class Konten extends Model
         'id_konten', 'gmbr', 'title', 'description'
     ];
 
-    public function donasi()
-    {
-        return $this->hasMany(Donasi::class);
-    }
+    // public function donasi()
+    // {
+    //     return $this->hasMany(Donasi::class);
+    // }
 
 }

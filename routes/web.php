@@ -73,7 +73,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('konten/save', 'KontenController@save')->name('k.s');
         Route::delete('konten/{id}', 'KontenController@delete')->name('k.d');
         Route::get('konten/{id}/edit', 'KontenController@edit')->name('k.e');
-        Route::post('/update_konten/{id}', 'KontenController@update')->name('k.u');
+        Route::patch('/konten/{id}', 'KontenController@update')->name('k.u');
         // Route::post('konten/{id}', 'KontenController@update')->name('k.u');
 
         //volunteer
@@ -111,3 +111,4 @@ Route::get('read', function () {
 
 //home
 Route::get('home', 'HomeController@index')->name('home');
+Route::post('home/save', 'DonasiController@saveDonasiUser')->name('save-donasi');

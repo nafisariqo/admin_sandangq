@@ -71,8 +71,19 @@ class KontenController extends Controller
      */
     public function delete($id_konten)
     {
-        DB::table('konten')->where('id_konten', $id_konten)->delete();
-        return redirect('konten')->with('status', 'Delete success');
+        $hapus = Konten::findorfail($id_konten);
+
+        $file = public_path('/img/').$hapus->gmbr;
+        
+        if (file_exists($file)){
+            @unlink($file);
+        }
+
+        $hapus->delete();
+        return back();
+
+        // DB::table('konten')->where('id_konten', $id_konten)->delete();
+        // return redirect('konten')->with('status', 'Delete success');
     }
     
     public function edit($id_konten){
@@ -86,23 +97,21 @@ class KontenController extends Controller
 
     public function update(Request $request, $id_konten){
 
-        $ubah = Konten::findorfail($id_konten);
-        $awal = $ubah->gmbr;
+        $ganti = Konten::findorfail($id_konten);
+        $pertama = $ganti->gmbr;
 
         $dt = [
-            'gmbr' => $awal,
+            'gmbr' => $pertama,
             'title' => $request['title'],
             'description' => $request['description'],
         ];
 
-        $request->gmbr->move(public_path().'/img', $awal);
-        $ubah->update($dt);
+        $request->gmbr->move(public_path().'/img', $pertama);
+        $ganti->update($dt);
         return redirect('konten');
 
-        // DB::table('konten')->where('id_konten', $id_konten)->update([
-        //     'title' => $request->title,
-        //     'description' => $request->description
-        // ]);
-        // return redirect('konten')->with('status', 'Update success');
+
+
+
     }
 }

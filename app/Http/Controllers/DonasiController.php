@@ -37,8 +37,19 @@ class DonasiController extends Controller
 
     
       DB::insert('insert into donasi (news, name, phone, address, resi) values (?, ?, ?, ?, ?)', [$request->news, $request->name,$request->phone, $request->address, $request->resi,]);
-      return redirect()->route('home');
+      return view('home');
     }
+
+    public function saveDonasiUser(Request $request){
+
+        // $validation = $request->validate([
+        //   'resi' => 'required|max:20|min:11'
+        // ]);
+    
+        
+          DB::insert('insert into donasi (name, phone, address, id_konten, resi) values (?, ?, ?, ?, ?)', [$request->name, $request->phone, $request->address, $request->news, $request->resi,]);
+          return view('user.home');
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -46,10 +57,10 @@ class DonasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function delete($id_donasi)
     {
        
-        DB::table('donasi')->where('id', $id)->delete();
+        DB::table('donasi')->where('id_donasi', $id_donasi)->delete();
         return redirect('donasi')->with('status', 'Delete success');
     }
     

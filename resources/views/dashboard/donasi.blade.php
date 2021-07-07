@@ -28,7 +28,7 @@
           @foreach ($donasi as $no => $data)
           <tr>
             <td>{{$no+1}}</td>
-            <td>{{$data->konten->title}}</td>
+            <td></td>
             <td>{{$data->name}}</td>
             <td>{{$data->phone}}</td>
             <td>{{$data->address}}</td>

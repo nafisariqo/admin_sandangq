@@ -294,7 +294,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 contact-right">
-                        <form action="{{route('d.s')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
+                        <form action="{{route('save-donasi')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
                             {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-lg-12 d-flex flex-column">
