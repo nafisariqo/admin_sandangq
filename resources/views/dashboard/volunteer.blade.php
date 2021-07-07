@@ -29,11 +29,11 @@
               <th>Action</th>
             </tr>
           </thead>
-          @foreach ($volunteer as $no => $data)
+          @foreach ($dataVolunteer as $no => $data)
           <tr>
             <td>{{$no+1}}</td>
             <td>
-              <a href="{{ asset($data->gambar) }}" target="_blank" rel="noopener noreferrer">Lihat Gambar</a>
+              <a href="{{ asset('img/' . $data->gambar) }}" target="_blank" rel="noopener noreferrer">Lihat Gambar</a>
             </td>
             <td>{{$data->nama}}</td>
             <td>

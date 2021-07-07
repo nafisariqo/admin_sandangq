@@ -22,6 +22,8 @@ Route::post('register', 'AuthController@register');
  
 Route::group(['middleware' => 'auth'], function () {
 
+        Route::get('index', 'IndexController@index')->name('index');
+
         Route::get('/', function () {
             return view('dashboard.index');
         });
@@ -36,6 +38,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/volunteer', function () {
             return view('dashboard.volunteer');
+        });
+
+        Route::get('/sk', function () {
+            return view('dashboard.sk');
         });
 
         Route::get('/tracking', function () {
@@ -58,13 +64,17 @@ Route::group(['middleware' => 'auth'], function () {
             return view('dashboard.create_volunteer');
         });
 
+        Route::get('/create_sk', function () {
+            return view('dashboard.create_sk');
+        });
+
         //konten
         Route::get('konten', 'KontenController@index')->name('konten');
         Route::post('konten/save', 'KontenController@save')->name('k.s');
-        // Route::get('/delete/konten/{id}', 'KontenController@delete');
         Route::delete('konten/{id}', 'KontenController@delete')->name('k.d');
         Route::get('konten/{id}/edit', 'KontenController@edit')->name('k.e');
-        Route::patch('konten/{id}', 'KontenController@update')->name('k.u');
+        Route::post('/update_konten/{id}', 'KontenController@update')->name('k.u');
+        // Route::post('konten/{id}', 'KontenController@update')->name('k.u');
 
         //volunteer
         Route::get('volunteer', 'VolunteerController@index')->name('volunteer');
@@ -77,6 +87,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('donasi', 'DonasiController@index')->name('donasi');
         Route::post('home/save', 'DonasiController@save')->name('d.s');
         Route::delete('donasi/{id}', 'DonasiController@delete')->name('d.d');
+
+        //sk
+        Route::get('sk', 'SkController@index')->name('sk');
+        Route::post('sk/save', 'SkController@save')->name('sk.s');
+        Route::delete('sk/{id}', 'SkController@delete')->name('sk.d');
+        Route::get('sk/{id}/edit', 'SkController@edit')->name('sk.e');
+        Route::patch('sk/{id}', 'SkController@update')->name('sk.u');
 
     Route::get('logout', 'AuthController@logout')->name('logout');
 

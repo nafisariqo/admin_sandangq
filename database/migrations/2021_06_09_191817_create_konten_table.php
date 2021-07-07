@@ -14,7 +14,8 @@ class CreateKontenTable extends Migration
     public function up()
     {
         Schema::create('konten', function (Blueprint $table) {
-            $table->id();
+            $table->id_konten();
+            $table->string('gmbr', 255);
             $table->string('title', 100)->unique();
             $table->string('description', 255);
             $table->timestamps();

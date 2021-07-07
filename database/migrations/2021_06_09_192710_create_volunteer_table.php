@@ -15,8 +15,8 @@ class CreateVolunteerTable extends Migration
     {
         Schema::create('volunteer', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('quotes', 255);
+            $table->string('gambar', 255);
+            $table->string('nama', 50);
             $table->timestamps();
         });
     }

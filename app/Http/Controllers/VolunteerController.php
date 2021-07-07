@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use lluminate\Support\Facades\Storage;
+use App\Volunteer;
 
 class VolunteerController extends Controller
 {
@@ -15,8 +16,8 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        $volunteer = DB::table('volunteer')->get();
-        return view('dashboard.volunteer', ['volunteer' => $volunteer ]);
+        $dataVolunteer = Volunteer::latest()->get();
+        return view('dashboard.volunteer', compact('dataVolunteer'));
     }
 
     /**
@@ -32,20 +33,17 @@ class VolunteerController extends Controller
 
     public function save(Request $request)
     {
-        $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-         ]);
-  
-          if ($request->file('gambar')) {
-            $imagePath = $request->file('gambar');
-            $imageName = $imagePath->getClientOriginalName();
+        $nm = $request->gambar;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); 
 
-            $path = $request->file('gambar')->storeAs('img', $imageName, 'public');
-  
-            $imagePath->move(base_path('\public\img'), $imageName);
-            DB::insert('insert into volunteer (gambar, nama) values (?, ?)', [$path, $request->nama]);
-            return redirect()->route('volunteer'); 
-          }
+            $dtUpload = new Volunteer;
+            $dtUpload->gambar = $namaFile;
+            $dtUpload->nama = $request->nama;
+
+            $nm->move(public_path().'/img', $namaFile);
+            $dtUpload->save();
+
+            return redirect('volunteer');
         
     }
 
@@ -67,17 +65,22 @@ class VolunteerController extends Controller
     }
     
     public function edit($id){
-        $volunteer = DB::table('volunteer')->where('id', $id)->first();
-        // return view('dashboard.edit_volunteer', ['volunteer' => $volunteer]);
-        return view('dashboard.edit_volunteer', compact('volunteer'));
+        $dt = Volunteer::findorfail($id);
+        return view('dashboard.edit_volunteer', compact('dt'));
     }
 
     public function update(Request $request, $id){  
 
-        DB::table('volunteer')->where('id', $id)->update([
-            'gambar' => $request->gambar,
-            'nama' => $request->nama
-        ]);
-        return redirect('volunteer')->with('status', 'Update success');
+        $ubah = Volunteer::findorfail($id);
+        $awal = $ubah->gambar;
+
+        $dt = [
+            'gambar' => $awal,
+            'nama' => $request['nama'],
+        ];
+
+        $request->gambar->move(public_path().'/img', $awal);
+        $ubah->update($dt);
+        return redirect('volunteer');
     }
 }

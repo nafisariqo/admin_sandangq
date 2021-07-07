@@ -62,6 +62,7 @@
         <div class="collapse-divider"></div>
         <h6 class="collapse-header">Data from User:</h6>
         <a class="collapse-item" href="/donasi">Donasi</a>
+        <a class="collapse-item" href="/sk">Syarat & Ketentuan</a>
         <a class="collapse-item" href="/tracking">Tracking</a>
         </div>
     </div>

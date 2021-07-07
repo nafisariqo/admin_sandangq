@@ -5,28 +5,19 @@
       <div class="row">
         <div class="col-8">
           <h2 class="my-3">Form Edit Data Volunteer</h2>
-          <form action="{{route('v.u', $volunteer->id)}}" method="post" enctype="multipart/form-data">
+          <form action="{{route('v.u', $dt->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('patch')
-            <input type="hidden" name="id" value="{{$volunteer->id}}"/>
+            
             <div class="row mb-3">
               <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
               <div class="col-sm-10">
-                <input type="file" name="file" onchange="previewFile(this)" />
-                <img id="previewImg" src="{{ asset('public/img')}}/{{ $volunteer->gambar}}" alt="Profile Image" style="max-width:130px;margin-top:20px;"/>
-                {{-- @if (old('gambar'))
-                    value="{{ old('gambar') }}"        
-                @else
-                    value="{{ $volunteer->gambar }}"
-                @endif --}}
-                
+                <input type="file" name="gambar" id="gambar">
               </div>
             </div>
-              {{-- <div class="col-sm-10"> --}}
-                {{-- <img id="gambar" src="{{ asset('\public\img')}}/{{ $volunteer->gambar}}" style="max-width:130px;margin-top:20px;"/> --}}
-                {{-- <img src="{{ asset('img/' . $volunteer->gambar ) }}" style="max-width:130px;margin-top:20px;"/> --}}
-                {{-- <img src="/public/img/{{ $volunteer->gambar}}" style="max-width:130px;margin-top:20px;"/>
-              </div> --}}
+            <div class="row mb-3">
+              <img src="{{ asset('img/' . $dt->gambar ) }}" height="10%" width="50%" alt="" srcset="">
+            </div>
             <div class="row mb-3">
               <label for="nama" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
@@ -34,7 +25,7 @@
                 @if (old('nama'))
                     value="{{ old('nama') }}"        
                 @else
-                    value="{{ $volunteer->nama }}"
+                    value="{{ $dt->nama }}"
                 @endif
                 >
               </div>
