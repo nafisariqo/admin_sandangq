@@ -68,6 +68,10 @@ Route::group(['middleware' => 'auth'], function () {
             return view('dashboard.create_sk');
         });
 
+        Route::get('/create_history', function () {
+            return view('dashboard.create_history');
+        });
+
         //konten
         Route::get('konten', 'KontenController@index')->name('konten');
         Route::post('konten/save', 'KontenController@save')->name('k.s');

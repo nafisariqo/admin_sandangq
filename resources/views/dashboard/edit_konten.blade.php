@@ -35,9 +35,9 @@
                 {{-- <input type="text" class="form-control" id="description" name="description" --}}
                 <textarea name="description" id="description" class="form-control summernote"
                 @if (old('description'))
-                    value="{{ old('description') }}"        
+                    value="{!! old('description') !!}"        
                 @else
-                    value="{{ $dt->description }}"
+                    value="{!! $dt->description !!}"
                 @endif
                 >
               </textarea>
@@ -60,6 +60,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('.summernote').summernote({
+      placeholder: "{!! $dt->description !!}",
       tabsize: 2,
       height: 120,
       toolbar: [
@@ -71,7 +72,7 @@
         ['insert', ['link', 'picture', 'video']],
         ['view', ['fullscreen', 'codeview', 'help']]
       ]
-    });
+    }).summernote('code', `{!! $dt->description !!}`);
   });
 </script>
 @endpush

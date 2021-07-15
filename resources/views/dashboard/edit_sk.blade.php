@@ -11,29 +11,29 @@
             <div class="row mb-3">
               <label for="syarat" class="col-sm-2 col-form-label">Syarat</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="syarat" name="syarat"
-                {{-- <textarea name="syarat" id="syarat" class="form-control summernote" --}}
+                {{-- <input type="text" class="form-control" id="syarat" name="syarat" --}}
+                <textarea name="syarat" id="syarat" class="form-control"
                 @if (old('syarat'))
-                    value="{{ old('syarat') }}"        
+                    value="{!! old('syarat') !!}"        
                 @else
-                    value="{{ $sk->syarat }}"
+                    value="{!! $sk->syarat !!}"
                 @endif
                 >
-              {{-- </textarea> --}}
+              </textarea>
               </div>
             </div>
             <div class="row mb-3">
                 <label for="ketentuan" class="col-sm-2 col-form-label">Ketentuan</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="ketentuan" name="ketentuan"
-                  {{-- <textarea name="ketentuan" id="ketentuan" class="form-control summernote" --}}
+                  {{-- <input type="text" class="form-control" id="ketentuan" name="ketentuan" --}}
+                  <textarea name="ketentuan" id="ketentuan" class="form-control"
                   @if (old('ketentuan'))
-                      value="{{ old('ketentuan') }}"        
+                      value="{!! old('ketentuan') !!}"        
                   @else
-                      value="{{ $sk->ketentuan }}"
+                      value="{!! $sk->ketentuan !!}"
                   @endif
                   >
-                {{-- </textarea> --}}
+                </textarea>
                 </div>
               </div>
             <div class="form-group row"> 
@@ -49,10 +49,11 @@
 
 @endsection
 
-{{-- @push('text-field')
+@push('text-field')
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.summernote').summernote({
+    $('#syarat').summernote({
+      placeholder: "{!! $sk->syarat !!}",
       tabsize: 2,
       height: 120,
       toolbar: [
@@ -64,7 +65,27 @@
         ['insert', ['link', 'picture', 'video']],
         ['view', ['fullscreen', 'codeview', 'help']]
       ]
-    });
+    }).summernote('code', `{!! $sk->syarat !!}`);
   });
 </script>
-@endpush --}}
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#ketentuan').summernote({
+      placeholder: "{!! $sk->ketentuan !!}",
+      tabsize: 2,
+      height: 120,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    }).summernote('code', `{!! $sk->ketentuan !!}`);
+  });
+</script>
+@endpush
+

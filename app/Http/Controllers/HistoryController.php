@@ -16,4 +16,24 @@ class HistoryController extends Controller
         // $konten = DB::table('konten')->get();
         // return view('dashboard.konten', ['konten' => $konten ]);
     }
+
+    public function create()
+    {
+       return view('create_history');
+    }
+
+    public function save(Request $request)
+    {
+        $nm = $request->image;
+        $namaFile = time().rand(100,999).".".$nm->getClientOriginalExtension(); 
+
+        $dtUpload = new History;
+        $dtUpload->image = $namaFile;
+        $dtUpload->penjelasan = $request->penjelasan;
+
+        $nm->move(public_path().'/img', $namaFile);
+        $dtUpload->save();
+
+        return redirect('historyAdmin');
+    }
 }
