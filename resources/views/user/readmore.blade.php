@@ -159,22 +159,18 @@
         <!-- Start Konten Area -->
         <section class="about-area" id="about">
             <div class="container-fluid">
+                @foreach ($item['konten'] as $k)
                 <div class="row d-flex justify-content-end align-items-center">
                     <div class="col-lg-6 col-md-12 about-left no-padding">
-                        <img class="img-fluid" src="img/1.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset ('img/' . $k->gmbr) }}" alt="">
                     </div>
                     <div class="col-lg-6 col-md-12 about-right">
-                        <h1>Banjir NTT</h1>
-                        <p>
-                            Banjir di NTT mengakibatkan kerusakan <br>
-                            175 Meninggal <br>
-                            162 luka-luka <br>
-                            16016 Mengungsi <br>
-
-                        </p>
+                        <h1>{{ $k->title}}</h1>
+                        <p>{!! $k->description !!}</p>
                         <!-- <button href="" class="primary-btn mt-20 text-uppercase ">Donate Now<span class="lnr lnr-arrow-right"></span></button> -->
                     </div>
                 </div>
+                @endforeach
             </div>
         </section>
         <!-- End about Area -->
@@ -262,8 +258,8 @@
         <!-- End volunteer Area -->
 <br>
 
-          <!-- Start donate Area -->
-          <section class="donate-area relative section-gap" id="donate">
+           <!-- Start donate Area -->
+        <section class="donate-area relative section-gap" id="donate">
             <div class="overlay overlay-bg"></div>
             <div class="container">
                 <div class="row d-flex justify-content-end">
@@ -275,40 +271,23 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
+                    @foreach ($item['sk'] as $ks)
                     <div class="col-lg-6 contact-left">
                         <div class="single-info">
-                            <h4>Syarat dan Ketentuan</h4>
-                            <p>
-                                1. Masih sangat layak untuk dipakai atau digunakan (pakaian, selimut, dan lain-lain) <br>
-                                2. Tidak robek/berlubang/bernoda<br>
-                                3. Tidak menerima pakaian dalam<br>
-                                4. Sebelumnya sandang tidak digunakan oleh orang yg memiliki penyakit menular
-                                (karena baju layak pakai akan diberikan kepada pasien luar daerah tidak mampu yg
-                                berada dirumah singgah peduli, khawatir akan beresiko)<br>
-                                5. Berkenan sebelum dikirim sandang sudah dalam keadaan bersih (telah dicuci/loundry)<br>
-                                6. jika sandang yang akan didonasikan tidak sesuai dengan syarat, maka pendonasi bersedia untuk membayar biaya retur
-                            </p>
+                            <h4>Syarat</h4>
+                            {!! $ks->syarat !!}
                             <h4>Ketentuan</h4>
-                            <p>
-                                1. Pendonasi melihat deskripsi donasi, Syarat dan Ketentuan <br>
-                                2. Pendonasi memutuskan untuk berdonasi kemana dan menyiapkan sandang yang akan didonasikan<br>
-                                3. Pendonasi mengirimkan sandang pada jasa ekspedisi terdekat dan menyimpan nomor resi untuk diunggah<br>
-                                4. Pendonasi mengisi form donasi pada website SandangQ<br>
-                                5. Histori donasi akan diupdate melalui website SandangQ<br>
-                                6. Jika ada pertanyaan, pendonasi bisa menghubungi email kami
+                            {!! $ks->ketentuan !!}
                         </div>
+                    @endforeach
                     </div>
                     <div class="col-lg-6 contact-right">
-                        <form action="{{route('d.s')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
+                        @foreach ($item['konten'] as $k)
+                        <form action="{{route('save-donasi')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
                             {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-lg-12 d-flex flex-column">
-                                        <select name="news" id="news" class="app-select form-control" required>
-                                           <option data-display="Project you want to donate">Project you want to donate</option>
-                                           <option value="Banjir NTT">Banjir NTT</option>
-                                           <option value="Panti Asuhan A">Panti Asuhan A</option>
-                                           <option value="Panti Asuhan B">Panti Asuhan B</option>
-                                       </select>
+                                        <input name="id_konten" id="id_konten" value="{{$k->title}}" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" class="form-control mt-20" required="" type="text" readonly>
                                     </div>
                                     <div class="col-lg-6 d-flex flex-column">
                                        <input name="name" id="name" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" class="form-control mt-20" required="" type="text" required>
@@ -329,6 +308,7 @@
                                    <div class="alert-msg"></div>
                                </div>
                          </form>
+                         @endforeach
                           <!-- <p class="payment-method">
                               We Accept :   <img src="img/payment.png" alt="">
                           </p> -->

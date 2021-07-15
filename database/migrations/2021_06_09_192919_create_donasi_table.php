@@ -14,11 +14,10 @@ class CreateDonasiTable extends Migration
     public function up()
     {
         Schema::create('donasi', function (Blueprint $table) {
-            $table->id();
+            $table->id_donasi();
             $table->string('name', 100);
             $table->string('phone', 15);
             $table->string('address', 200);
-            $table->string('news', 100);
             $table->string('resi', 20);
             $table->timestamps();
         });

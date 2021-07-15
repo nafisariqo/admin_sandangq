@@ -85,7 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         //donasi
         Route::get('donasi', 'DonasiController@index')->name('donasi');
-        Route::post('home/save', 'DonasiController@save')->name('d.s');
+        // Route::post('home/save', 'DonasiController@save')->name('d.s');
         Route::delete('donasi/{id}', 'DonasiController@delete')->name('d.d');
 
         //sk
@@ -95,18 +95,30 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('sk/{id}/edit', 'SkController@edit')->name('sk.e');
         Route::patch('sk/{id}', 'SkController@update')->name('sk.u');
 
+         //history
+         Route::get('historyAdmin', 'HistoryController@index')->name('history');
+         Route::post('history/save', 'HistoryController@save')->name('history.s');
+         Route::delete('history/{id}', 'HistoryController@delete')->name('history.d');
+         Route::get('history/{id}/edit', 'HistoryController@edit')->name('history.e');
+         Route::patch('history/{id}', 'HistoryController@update')->name('history.u');
+
     Route::get('logout', 'AuthController@logout')->name('logout');
 
 });
 
 //user page
 Route::get('/home', function () {
-    return view('user.home');
+    return view('user.home'); 
 });
 
-Route::get('read', function () {
-    return view('user.readmore');
+Route::get('/history', function () {
+    return view('user.history'); 
 });
+
+
+Route::get('/readmore/{id}', 'ReadmoreController@index')
+    ->name('user.readmore');
+
 
 
 //home

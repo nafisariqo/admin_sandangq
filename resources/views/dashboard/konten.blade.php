@@ -71,7 +71,7 @@
 @push('after-script')
 <script>
   $(".swal-confirm").click(function(e) {
-    id_konten = e.target.dataset.id_konten;
+    id_konten = e.target.dataset.id;
     swal({
       title: "Are you sure? " + id_konten,
       text: "Your will not be able to recover this imaginary file!",

@@ -32,13 +32,15 @@
             <div class="row mb-3">
               <label for="description" class="col-sm-2 col-form-label">Description</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="description" name="description"
+                {{-- <input type="text" class="form-control" id="description" name="description" --}}
+                <textarea name="description" id="description" class="form-control summernote"
                 @if (old('description'))
                     value="{{ old('description') }}"        
                 @else
                     value="{{ $dt->description }}"
                 @endif
                 >
+              </textarea>
               </div>
             </div>
             <div class="form-group row"> 
@@ -53,3 +55,23 @@
 </div>
 
 @endsection
+
+@push('text-field')
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.summernote').summernote({
+      tabsize: 2,
+      height: 120,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    });
+  });
+</script>
+@endpush

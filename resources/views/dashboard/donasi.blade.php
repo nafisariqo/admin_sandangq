@@ -17,10 +17,10 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Konten</th>
               <th>Name</th>
               <th>Phone</th>
               <th>Address</th>
+              <th>Konten</th>
               <th>Resi</th>
               <th>Action</th>
             </tr>
@@ -28,10 +28,10 @@
           @foreach ($donasi as $no => $data)
           <tr>
             <td>{{$no+1}}</td>
-            <td></td>
             <td>{{$data->name}}</td>
             <td>{{$data->phone}}</td>
             <td>{{$data->address}}</td>
+            <td>{{$data->konten_id}}</td>
             <td>{{$data->resi}}</td>
             <td>
               

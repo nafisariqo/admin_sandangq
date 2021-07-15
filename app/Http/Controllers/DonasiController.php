@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Donasi;
 
 class DonasiController extends Controller
 {
@@ -14,7 +15,7 @@ class DonasiController extends Controller
      */
     public function index()
     {
-        // $dtDonasi = Donasi::with('konten')->paginate(10);
+      // $dtDonasi = Donasi::with('konten')->paginate(5);
         $donasi = DB::table('donasi')->get();
         return view('dashboard.donasi', ['donasi' => $donasi ]);
     }
@@ -29,16 +30,16 @@ class DonasiController extends Controller
        return view('donasi');
     }
 
-    public function save(Request $request){
+    // public function save(Request $request){
 
     // $validation = $request->validate([
     //   'resi' => 'required|max:20|min:11'
     // ]);
 
     
-      DB::insert('insert into donasi (news, name, phone, address, resi) values (?, ?, ?, ?, ?)', [$request->news, $request->name,$request->phone, $request->address, $request->resi,]);
-      return view('home');
-    }
+    //   DB::insert('insert into donasi (news, name, phone, address, resi) values (?, ?, ?, ?, ?)', [$request->news, $request->name,$request->phone, $request->address, $request->resi,]);
+    //   return view('home');
+    // }
 
     public function saveDonasiUser(Request $request){
 
@@ -47,7 +48,7 @@ class DonasiController extends Controller
         // ]);
     
         
-          DB::insert('insert into donasi (name, phone, address, id_konten, resi) values (?, ?, ?, ?, ?)', [$request->name, $request->phone, $request->address, $request->news, $request->resi,]);
+          DB::insert('insert into donasi (name, phone, address, konten_id, resi) values (?, ?, ?, ?, ?)', [$request->name, $request->phone, $request->address, $request->konten_id, $request->resi,]);
           return view('user.home');
         }
 

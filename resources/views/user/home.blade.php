@@ -45,6 +45,7 @@
                                 <a href="#project">Projects</a>
                                 <a href="#about">About</a>
                                 <a href="#donate">Donate</a>
+                                <a href="history">History</a>
                             </nav>
                             <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
                         </div>
@@ -76,7 +77,7 @@
                 <div class="container">
                     <div class="row d-flex callto-wrap justify-content-between pt-40 pb-40">
                         <h3 class="text-white">Tracking Your Donation!</h3>
-                        <a href="#" class="head-btn head-btn2 btn text-uppercase">Tracking Now</a>
+                        <a href="https://anteraja.id/tracking" class="head-btn head-btn2 btn text-uppercase">Tracking Now</a>
                     </div>
                 </div>
             </section>
@@ -95,26 +96,25 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 project-wrap">
+                    @foreach ($khome['konten'] as $k)
+                    <div class="col-lg-4 col-md-4 project-wrap" style="margin-bottom: 50px">
                         <div class="single-project">
                             <div class="content">
                                 <a href="#" target="_blank">
                                   <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/1.png" alt="">
+                                  <img class="content-image img-fluid d-block mx-auto" src="{{ asset ('img/' . $k->gmbr) }}" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
+                                          <a href="readmore/<?= $k->id_konten?>" class="head-btn btn text-uppercase">Donate Now!</a>
                                       </div>
                                 </a>
                              </div>
                         </div>
                         <div class="details">
-                            <a href="#"><h2>Gempa Bumi Majene</h2></a>
-                              <p>Bencana tersebut merenggut harta dan keluarga</p>
-                            
+                            <a href="#"><h2>{{ $k->title}}</h2></a>
                         </div>
-
                     </div>
-                    <div class="col-lg-4 col-md-4 project-wrap">
+                    @endforeach
+                    {{-- <div class="col-lg-4 col-md-4 project-wrap">
                         <div class="single-project">
                             <div class="content">
                                 <a href="#" target="_blank">
@@ -148,7 +148,7 @@
                             <a href="#"><h2>Angin Puting Beliung Demak</h2></a>
                               <p>Bencana tersebut merenggut harta dan keluarga</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
@@ -185,72 +185,22 @@
                         </p> --}}
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-bottom: 50px">
+                    @foreach ($khome['volunteer'] as $v)
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
                                 {{-- <a href="#" target="_blank"> --}}
                                   <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/v1.jpg" alt="">
+                                       <img class="content-image img-fluid d-block mx-auto" src="{{ asset ('img/' . $v->gambar) }}" alt="">
                                       <div class="content-details fadeIn-bottom">
-                                          <h4>Jungkook</h4>
-                                          <p>
-                                              CEO
-                                          </p>
+                                          <h4>{{ $v->nama}}</h4>
                                       </div>
-                                </a>
                              </div>
                         </div>
+                    
                     </div>
-                    <div class="col-lg-3 col-md-3 vol-wrap">
-                        <div class="single-vol">
-                            <div class="content">
-                                {{-- <a href="#" target="_blank"> --}}
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/v2.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <h4>Seokjin</h4>
-                                          <p>
-                                              CCO
-                                          </p>
-                                      </div>
-                                </a>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 vol-wrap">
-                        <div class="single-vol">
-                            <div class="content">
-                                {{-- <a href="#" target="_blank"> --}}
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/v3.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <h4>RM</h4>
-                                          <p>
-                                              Donatur
-                                          </p>
-                                      </div>
-                                </a>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 vol-wrap">
-                        <div class="single-vol">
-                            <div class="content">
-                                {{-- <a href="#" target="_blank"> --}}
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/v4.jpg" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <h4>Jimin</h4>
-                                          <p>
-                                              Donatur
-                                          </p>
-                                      </div>
-                                </a>
-                             </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -270,30 +220,18 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
+                    @foreach ($khome['sk'] as $ks)
                     <div class="col-lg-6 contact-left">
                         <div class="single-info">
-                            <h4>Syarat dan Ketentuan</h4>
-                            <p>
-                                1. Masih sangat layak untuk dipakai atau digunakan (pakaian, selimut, dan lain-lain) <br>
-                                2. Tidak robek/berlubang/bernoda<br>
-                                3. Tidak menerima pakaian dalam<br>
-                                4. Sebelumnya sandang tidak digunakan oleh orang yg memiliki penyakit menular
-                                (karena baju layak pakai akan diberikan kepada pasien luar daerah tidak mampu yg
-                                berada dirumah singgah peduli, khawatir akan beresiko)<br>
-                                5. Berkenan sebelum dikirim sandang sudah dalam keadaan bersih (telah dicuci/loundry)<br>
-                                6. jika sandang yang akan didonasikan tidak sesuai dengan syarat, maka pendonasi bersedia untuk membayar biaya retur
-                            </p>
+                            <h4>Syarat</h4>
+                            {!! $ks->syarat !!}
                             <h4>Ketentuan</h4>
-                            <p>
-                                1. Pendonasi melihat deskripsi donasi, Syarat dan Ketentuan <br>
-                                2. Pendonasi memutuskan untuk berdonasi kemana dan menyiapkan sandang yang akan didonasikan<br>
-                                3. Pendonasi mengirimkan sandang pada jasa ekspedisi terdekat dan menyimpan nomor resi untuk diunggah<br>
-                                4. Pendonasi mengisi form donasi pada website SandangQ<br>
-                                5. Histori donasi akan diupdate melalui website SandangQ<br>
-                                6. Jika ada pertanyaan, pendonasi bisa menghubungi email kami
+                            {!! $ks->ketentuan !!}
                         </div>
+                    @endforeach
                     </div>
-                    <div class="col-lg-6 contact-right">
+                
+                    <div class="col-lg-6 contact-right"> 
                         <form action="{{route('save-donasi')}}" method="POST" class="booking-form" id="myForm" action="donate.php">
                             {{ csrf_field() }}
                                 <div class="row">
@@ -304,6 +242,10 @@
                                            <option value="Panti Asuhan A">Panti Asuhan A</option>
                                            <option value="Panti Asuhan B">Panti Asuhan B</option>
                                        </select>
+                                       {{-- <option disabled value>Project you want to donate</option>
+                                       @foreach ($k as $item)
+                                       <option value="{{$item->id_konten}}">{{$item->title}}>Banjir NTT</option>  
+                                       @endforeach --}}
                                     </div>
                                     <div class="col-lg-6 d-flex flex-column">
                                        <input name="name" id="name" placeholder="Nama Lengkap" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="form-control mt-20" required="" type="text" required>
