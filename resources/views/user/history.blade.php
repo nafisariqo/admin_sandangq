@@ -37,7 +37,7 @@
                 <div class="header-wrap">
                     <div class="header-top d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="#home" ><img src="img/logo.png" alt="" style="width:120px;height:50px align=left;"></a>
+                            <a href="/home" ><img src="img/logo.png" alt="" style="width:120px;height:50px align=left;"></a>
                         </div>
                         <div class="main-menubar d-flex align-items-center">
                             <nav class="hide">
@@ -55,37 +55,36 @@
         </header>
         <!-- End Header Area -->
 
-        <!-- Start volunteer Area -->
-        <section class="volunteer-area section-gap">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-8 pb-80 header-text">
-                        <h1>History Projects</h1>
-                        {{-- <p>
-                            <br> labore  et dolore magna aliqua.
-                        </p> --}}
-                    </div>
-                </div>
-                <div class="row" style="margin-bottom: 50px">
-                    {{-- @foreach ($khome['volunteer'] as $v) --}}
-                    <div class="col-lg-3 col-md-3 vol-wrap">
-                        <div class="single-vol">
-                            <div class="content">
-                                {{-- <a href="#" target="_blank"> --}}
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <h4></h4>
-                                      </div>
-                             </div>
-                        </div>
-                    
-                    </div>
-                    {{-- @endforeach --}}
+       <!-- Start History Area -->
+       <section class="project-area section-gap" id="project">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8 pb-80 header-text">
+                    <h1>History Project</h1>
+                    <p>
+                       Berikut ini merupakan transparasi project yang donasinya sudah kami antarkan!
+                    </p>
                 </div>
             </div>
-        </section>
-        <!-- End volunteer Area -->
+            <div class="row">
+                {{-- @foreach ($khome['konten'] as $k) --}}
+                <div class="col-lg-4 col-md-4 project-wrap" style="margin-bottom: 50px">
+                    <div class="single-project">
+                        <div class="content">
+                              {{-- <img class="content-image img-fluid d-block mx-auto" src="{{ asset ('img/' . $k->gmbr) }}" alt=""> --}}
+                              <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
+                         </div>
+                    </div>
+                    <div class="details">
+                        {{-- <a href="#"><h2>{{ $k->title}}</h2></a> --}}
+                    <h2>penjelasan</h2>
+                    </div>
+                </div>
+                {{-- @endforeach --}}
+            </div>
+        </div>
+    </section>
+    <!-- End History Area -->
 
 
         <!-- start footer Area -->
