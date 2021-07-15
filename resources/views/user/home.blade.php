@@ -114,42 +114,6 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="col-lg-4 col-md-4 project-wrap">
-                        <div class="single-project">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/2.png" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
-                                      </div>
-                                </a>
-                             </div>
-                        </div>
-                        <div class="details">
-                            <a href="#"><h2>Banjir Kalimantan selatan</h2></a>
-                              <p>Banjir tersebut merenggut harta dan keluarga</p>
-                        
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 project-wrap">
-                        <div class="single-project">
-                            <div class="content">
-                                <a href="#" target="_blank">
-                                  <div class="content-overlay"></div>
-                                       <img class="content-image img-fluid d-block mx-auto" src="img/3.png" alt="">
-                                      <div class="content-details fadeIn-bottom">
-                                          <a href="{{ url('read') }}" class="head-btn btn text-uppercase">Donate Now!</a>
-                                      </div>
-                                </a>
-                             </div>
-                        </div>
-                        <div class="details">
-                            <a href="#"><h2>Angin Puting Beliung Demak</h2></a>
-                              <p>Bencana tersebut merenggut harta dan keluarga</p>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
         </section>
