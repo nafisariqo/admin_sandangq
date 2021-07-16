@@ -49,7 +49,7 @@ class DonasiController extends Controller
     
         
           DB::insert('insert into donasi (name, phone, address, konten_id, resi) values (?, ?, ?, ?, ?)', [$request->name, $request->phone, $request->address, $request->konten_id, $request->resi,]);
-          return view('user.home');
+          return redirect('home');
         }
 
     /**

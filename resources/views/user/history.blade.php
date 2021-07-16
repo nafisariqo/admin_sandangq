@@ -67,20 +67,19 @@
                 </div>
             </div>
             <div class="row">
-                {{-- @foreach ($khome['konten'] as $k) --}}
+                @foreach ($hs as $h)
                 <div class="col-lg-4 col-md-4 project-wrap" style="margin-bottom: 50px">
                     <div class="single-project">
                         <div class="content">
-                              {{-- <img class="content-image img-fluid d-block mx-auto" src="{{ asset ('img/' . $k->gmbr) }}" alt=""> --}}
-                              <img class="content-image img-fluid d-block mx-auto" src="img/1.jpg" alt="">
+                              <img class="content-image img-fluid d-block mx-auto" src="{{ asset ('img/' . $h->image) }}" alt="">
                          </div>
                     </div>
                     <div class="details">
-                        {{-- <a href="#"><h2>{{ $k->title}}</h2></a> --}}
-                    <h2>penjelasan</h2>
+                        
+                    <h2>{!! $h->penjelasan !!}</h2>
                     </div>
                 </div>
-                {{-- @endforeach --}}
+                @endforeach
             </div>
         </div>
     </section>

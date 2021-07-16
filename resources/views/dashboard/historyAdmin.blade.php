@@ -36,7 +36,6 @@
                 </td>
                 <td>{{$data->penjelasan}}</td>
                 <td>
-                  <a href="{{route('history.e', $data->id)}}" class="btn btn-warning mb-3">Edit Data</a>
                   <a href="#" data-id="{{ $data->id }}" class="btn btn-danger mb-3 swal-confirm">
                     <form action="{{ route('history.d', $data->id) }}" id="delete{{ $data->id }}" method="POST">
                       @csrf

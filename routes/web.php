@@ -103,8 +103,7 @@ Route::group(['middleware' => 'auth'], function () {
          Route::get('historyAdmin', 'HistoryController@index')->name('history');
          Route::post('history/save', 'HistoryController@save')->name('history.s');
          Route::delete('history/{id}', 'HistoryController@delete')->name('history.d');
-         Route::get('history/{id}/edit', 'HistoryController@edit')->name('history.e');
-         Route::patch('history/{id}', 'HistoryController@update')->name('history.u');
+         
 
     Route::get('logout', 'AuthController@logout')->name('logout');
 
@@ -115,10 +114,11 @@ Route::get('/home', function () {
     return view('user.home'); 
 });
 
-Route::get('/history', function () {
-    return view('user.history'); 
-});
+// Route::get('/history', function () {
+//     return view('user.history'); 
+// });
 
+Route::get('/history', 'HistoryUserController@index')->name('history');
 
 Route::get('/readmore/{id}', 'ReadmoreController@index')
     ->name('user.readmore');

@@ -23,10 +23,14 @@ class HomeController extends Controller
       // dd($data);
       // return view('user.home', compact('data'));
 
-      $khome['konten'] = Konten::all();
-      $khome['volunteer'] = Volunteer::all();
-      $khome['sk'] = Sk::all();
-      return view('user.home', compact('khome'));
+      $konten = Konten::all();
+      $volunteer = Volunteer::all();
+      $sk = Sk::all();
+      return view('user.home', [
+        'konten' => $konten,
+        'volunteer' => $volunteer,
+        'sk' => $sk
+      ]);
       // dd($khome);
     }
 

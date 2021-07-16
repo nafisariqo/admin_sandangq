@@ -36,4 +36,20 @@ class HistoryController extends Controller
 
         return redirect('historyAdmin');
     }
+
+    public function delete($id)
+    {
+        $hapus = History::findorfail($id);
+
+        $file = public_path('/img/').$hapus->image;
+        
+        if (file_exists($file)){
+            @unlink($file);
+        }
+
+        $hapus->delete();
+        return back();
+    }
+
+    
 }

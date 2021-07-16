@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach ($khome['konten'] as $k)
+                    @foreach ($konten as $k)
                     <div class="col-lg-4 col-md-4 project-wrap" style="margin-bottom: 50px">
                         <div class="single-project">
                             <div class="content">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 50px">
-                    @foreach ($khome['volunteer'] as $v)
+                    @foreach ($volunteer as $v)
                     <div class="col-lg-3 col-md-3 vol-wrap">
                         <div class="single-vol">
                             <div class="content">
@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    @foreach ($khome['sk'] as $ks)
+                    @foreach ($sk as $ks)
                     <div class="col-lg-6 contact-left">
                         <div class="single-info">
                             <h4>Syarat</h4>
@@ -202,9 +202,9 @@
                                     <div class="col-lg-12 d-flex flex-column">
                                         <select name="news" id="news" class="app-select form-control" required>
                                            <option data-display="Project you want to donate">Project you want to donate</option>
-                                           <option value="Banjir NTT">Banjir NTT</option>
-                                           <option value="Panti Asuhan A">Panti Asuhan A</option>
-                                           <option value="Panti Asuhan B">Panti Asuhan B</option>
+                                           <option value="Banjir NTT">Banjir Kalimantan Selatan</option>
+                                           <option value="Panti Asuhan A">Gempa Bumi Majenee</option>
+                                           <option value="Panti Asuhan B">Angin Puting Beliung Demak</option>
                                        </select>
                                        {{-- <option disabled value>Project you want to donate</option>
                                        @foreach ($k as $item)
